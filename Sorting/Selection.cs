@@ -53,7 +53,7 @@ namespace Sorting
 
             Console.WriteLine("\nThe array after Selection Sort is: ");
             foreach (var element in array)
-            {
+            { 
                 Console.Write("{0} ", element);
             }
 
