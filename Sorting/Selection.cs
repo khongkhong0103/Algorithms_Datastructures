@@ -15,33 +15,42 @@ namespace Sorting
          */
         static void Main(string[] args)
         {
-            Console.WriteLine("Selection Soret program in c# ");
-            int array_size = 10;
-            int[] array = new int[10] { 100, 50, 20, 40, 10, 60, 80, 70, 90, 30 };
+            Console.WriteLine("Selection Sort program in C#");
+
+            int[] array = { 100, 50, 20, 40, 10, 60, 80, 70, 90, 30 };
+
             Console.WriteLine("The array before selection sort is: ");
-            for (int i = 0; i < array_size; i++)
+            foreach (var element in array)
             {
-                Console.Write(" {0}",array[i]);
+                Console.Write("{0} ", element);
             }
-            int tmp, min_key;
-            for(int j = 0; j < array_size -1; j++)
+
+            for (var i = 0; i < array.Length - 1; i++)
             {
-                min_key = j;
-                for (int k = j+1; k < array_size; k++)
+                var minIndex = i;
+
+                for (var j = i + 1; j < array.Length; j++)
                 {
-                    if (array[k] < array[min_key]) {
-                        min_key = k;
+                    if (array[j] < array[minIndex])
+                    {
+                        minIndex = j;
                     }
                 }
-                tmp= array[min_key];
-                array[min_key] = array[j];
-                array[j] = tmp;
+
+                if (minIndex != i)
+                {
+                    array[i] ^= array[minIndex];
+                    array[minIndex] ^= array[i];
+                    array[i] ^= array[minIndex];
+                }
             }
+
             Console.WriteLine("\nThe array after Selection Sort is: ");
-            for(int i = 0;i < array_size;i++)
+            foreach (var element in array)
             {
-                Console.Write(" {0}",array[i]);
+                Console.Write("{0} ", element);
             }
+
             Console.ReadLine();
         }
     }
