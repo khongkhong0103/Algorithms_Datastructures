@@ -34,17 +34,17 @@ namespace Sorting
             {
                 int item = arr[i];
                 int j = i - 1;
-                 for (j; j >= 0 && arr[j] > item; j--)
-                {
-                    arr[j+1] = arr[j];
-                }
-                arr[j+1] = item;
-             /*   while (j >= 0 && arr[j] > item)
+                for (j; j >= 0 && arr[j] > item; j--)
                 {
                     arr[j + 1] = arr[j];
-                    j--;
                 }
-                arr[j + 1] = item;*/
+                arr[j + 1] = item;
+                /*   while (j >= 0 && arr[j] > item)
+                   {
+                       arr[j + 1] = arr[j];
+                       j--;
+                   }
+                   arr[j + 1] = item;*/
             }
         }
     }

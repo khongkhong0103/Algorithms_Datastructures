@@ -5,7 +5,20 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Sorting.Insertion</StartupObject>
+    <StartupObject>Sorting.Bubble</StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Bubble.cs" />
+    <Compile Remove="Heap.cs" />
+    <Compile Remove="Insertion.cs" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Bubble.cs" />
+    <None Include="Heap.cs" />
+    <None Include="Insertion.cs" />
+  </ItemGroup>
 
 </Project>

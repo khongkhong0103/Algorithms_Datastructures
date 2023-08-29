@@ -30,34 +30,34 @@ namespace Sorting
             {
                 Console.Write("{0} ", element);
             }
-
-            for (var i = 0; i < array.Length - 1; i++)
-            {
-                var minIndex = i;
-
-                for (var j = i + 1; j < array.Length; j++)
-                {
-                    if (array[j] < array[minIndex])
-                    {
-                        minIndex = j;
-                    }
-                }
-
-                if (minIndex != i)
-                {
-                    array[i] ^= array[minIndex];
-                    array[minIndex] ^= array[i];
-                    array[i] ^= array[minIndex];
-                }
-            }
+            SelectionSort(array);
 
             Console.WriteLine("\nThe array after Selection Sort is: ");
             foreach (var element in array)
-            { 
+            {
                 Console.Write("{0} ", element);
             }
-
             Console.ReadLine();
+        }
+
+        static int[] SelectionSort(int[] array)
+        {
+            int min_index;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                min_index = i;
+                for (int k = i + 1; k < array.Length; k++)
+                {
+                    if (array[k] < array[min_index])
+                    {
+                        min_index = k;
+                    }
+                }
+                array[i] ^= array[min_index];
+                array[min_index] ^= array[i];
+                array[i] ^= array[min_index];
+            }
+            return array;
         }
     }
 }
