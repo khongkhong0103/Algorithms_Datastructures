@@ -45,6 +45,7 @@ namespace Sorting
             int min_index;
             for (int i = 0; i < array.Length - 1; i++)
             {
+                // tim phan tu nho nhat
                 min_index = i;
                 for (int k = i + 1; k < array.Length; k++)
                 {
